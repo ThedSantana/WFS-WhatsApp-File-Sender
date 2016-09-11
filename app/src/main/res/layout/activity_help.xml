@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    tools:context="com.retrospect.whatzappfilecourier.HelpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="What Does This App Do?"
+                android:id="@+id/textView_what"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:layout_centerInParent="true"
+                android:text="1. You might already be knowing that official WhatsApp allows users to send only audio and video files. You cannot send any other type of file. This is where &apos;WhatzApp File Courier&apos; comes in. It lets you send ANY type of file through official WhatsApp.\n\n2. So, how does it do it? &apos;WhatzApp File Courier&apos; hides the file inside a small audio file, and sends it to the receiver through the official WhatsApp. Receiver&apos;s app reads this unique audio file and extracts the hidden original file. Neat! eh?"
+                android:id="@+id/textView_what1"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="How To Use This App?"
+                android:id="@+id/textView"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="1. Both sender and receiver MUST have have this &apos;WhatzApp File Courier&apos; installed. It is through this app that sender can send the file and receiver can extract it."
+                android:id="@+id/textView11"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2. To send any file, you can use the inbuilt file browser the file. Just select the file you want to send using the browser, and send it. Else, you can use your favorite pre-installed file browser, like ES File Explorer, to choose the file."
+                android:id="@+id/textView2"
+                android:layout_centerInParent="true"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/help1"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="3. Received files show up in the 'Unextracted' Tab. To extract the received file, just tap on the it. Now swipe right to the 'Extracted' tab and click on 'Refresh List' to see the received file."
+                android:id="@+id/textView4"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/help2"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="4. You can either tap on the file to open it or long press to delete it."
+                android:id="@+id/textView5"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@drawable/help3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/help4"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/help_back_button"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Back"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

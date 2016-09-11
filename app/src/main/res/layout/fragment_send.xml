@@ -1,0 +1,149 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="center_horizontal"
+        card_view:cardBackgroundColor="#1E88E5"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="6dp">
+
+        <TextView android:id="@+id/select_file_cardbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8.5dp"
+            android:paddingBottom="8.5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-medium"
+            android:text="SELECT FILE" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_Lolli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="center_horizontal"
+        card_view:cardBackgroundColor="#1E88E5"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="6dp">
+
+        <TextView android:id="@+id/select_file_cardbuttonLolli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8.5dp"
+            android:paddingBottom="8.5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-medium"
+            android:text="SELECT FILE" />
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="62dp"
+        android:text="&#8595;  Or  &#8595;"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_marginTop="86dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/listView"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:cacheColorHint="@android:color/transparent"
+        android:headerDividersEnabled="false"
+        android:clipToPadding="false"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        fab:fab_addButtonColorNormal="#e53935"
+        fab:fab_addButtonColorPressed="#CC9E39"
+        fab:fab_addButtonPlusIconColor="@color/white"
+        fab:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#1E88E5"
+            fab:fab_icon="@drawable/noads"
+            fab:fab_title="No Ads"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_vault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#34ad00"
+            fab:fab_icon="@drawable/lock"
+            fab:fab_title="Secret Vault"
+            fab:fab_size="mini"
+            fab:fab_colorPressed="@color/white_pressed" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fab_button_help"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="#1E88E5"
+            fab:fab_icon="@drawable/question"
+            fab:fab_size="mini"
+            fab:fab_title="How To?"
+            fab:fab_colorPressed="@color/white_pressed" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_button_share"
+            fab:fab_colorNormal="#34ad00"
+            fab:fab_icon="@drawable/share"
+            fab:fab_size="mini"
+            fab:fab_title="Share"
+            fab:fab_colorPressed="@color/white_pressed" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:background="@color/half_black_transparent"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="15dp"
+        android:padding="2dp"
+        android:textAlignment="center"
+        android:text="@string/current_path"
+        android:textColor="@color/white"
+        android:id="@+id/editTextCurrentPath"
+        android:layout_gravity="center_horizontal|bottom" />
+
+
+</FrameLayout>
