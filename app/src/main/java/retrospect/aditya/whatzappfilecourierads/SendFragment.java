@@ -1,7 +1,8 @@
-package retrospect.aditya.whatzappfilecourier;
+package retrospect.aditya.whatzappfilecourierads;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -122,22 +123,29 @@ public class SendFragment extends Fragment {
         fabSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Coming soon!", Toast.LENGTH_SHORT).show();
                 fam.collapse();
+                Uri uri = Uri.parse("market://details?id=com.retroid.quiz.time.ultimate.trivia");
+                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                try {
+                    startActivity(goToMarket);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.retroid.quiz.time.ultimate.trivia")));
+                }
             }
         });
 
-        fabVault = (FloatingActionButton) v.findViewById(R.id.fab_vault);
+        /*fabVault = (FloatingActionButton) v.findViewById(R.id.fab_vault);
         fabVault.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Coming Soon!", Toast.LENGTH_SHORT).show();
                 fam.collapse();
-                /*Intent intent = new Intent(Intent.ACTION_VIEW);
+                *//*Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("market://details?id=com.gameloft.android.ANMP.GloftBPHM.ML"));
-                startActivity(intent);*/
+                startActivity(intent);*//*
             }
-        });
+        });*/
 
         fabHelp = (FloatingActionButton) v.findViewById(R.id.fab_button_help);
         fabHelp.setOnClickListener(new View.OnClickListener() {
@@ -403,6 +411,7 @@ public class SendFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             pd = new ProgressDialog(getActivity());
+            pd.setMessage("Preparing your file!");
             pd.setMessage("Preparing your file!");
             pd.setTitle("Please Wait...");
             pd.setCancelable(false);

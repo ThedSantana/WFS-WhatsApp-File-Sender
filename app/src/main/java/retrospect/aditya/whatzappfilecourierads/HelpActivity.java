@@ -1,4 +1,4 @@
-package retrospect.aditya.whatzappfilecourier;
+package retrospect.aditya.whatzappfilecourierads;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;

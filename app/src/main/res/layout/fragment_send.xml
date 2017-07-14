@@ -91,13 +91,13 @@
             android:id="@+id/fab_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="#1E88E5"
-            fab:fab_icon="@drawable/noads"
-            fab:fab_title="No Ads"
+            fab:fab_colorNormal="#34ad00"
+            fab:fab_icon="@drawable/quizpro"
+            fab:fab_title="Quiz Time"
             fab:fab_size="mini"
             fab:fab_colorPressed="@color/white_pressed" />
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
+        <!--<com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_vault"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             fab:fab_icon="@drawable/lock"
             fab:fab_title="Secret Vault"
             fab:fab_size="mini"
-            fab:fab_colorPressed="@color/white_pressed" />
+            fab:fab_colorPressed="@color/white_pressed" />-->
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"

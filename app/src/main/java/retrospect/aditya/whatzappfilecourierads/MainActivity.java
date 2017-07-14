@@ -1,4 +1,4 @@
-package retrospect.aditya.whatzappfilecourier;
+package retrospect.aditya.whatzappfilecourierads;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,8 +15,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 
+import com.appnext.ads.interstitial.Interstitial;
+import com.appnext.core.callbacks.OnAdClosed;
+import com.appnext.core.callbacks.OnAdLoaded;
 import com.astuetz.PagerSlidingTabStrip;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
 
@@ -27,6 +34,7 @@ public class MainActivity extends ActionBarActivity {
     MyPagerAdapter adapter;
 
     SharedPreferences prefs = null;
+    Interstitial interstitial_Ad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,22 @@ public class MainActivity extends ActionBarActivity {
         prefs = getSharedPreferences("retrospect.aditya.whatzappfilecourier", MODE_PRIVATE);
 
         createDirectories();
+
+        MobileAds.initialize(this, "");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setVisibility(View.VISIBLE);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        interstitial_Ad = new Interstitial(this, "");
+        interstitial_Ad.loadAd();
+        interstitial_Ad.setOnAdClosedCallback(new OnAdClosed() {
+            @Override
+            public void onAdClosed() {
+                MainActivity.this.finish();
+                System.exit(0);
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setLogo(R.drawable.ic_action_wa);
@@ -73,6 +97,38 @@ public class MainActivity extends ActionBarActivity {
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
         tabs.setViewPager(pager);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setMessage("Exit App?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        if(interstitial_Ad.isAdLoaded()) {
+                            interstitial_Ad.showAd();
+                        } else {
+                            MainActivity.super.onBackPressed();
+                        }
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
     }
 
     @Override
